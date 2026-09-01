@@ -1,3 +1,4 @@
+const API_BASE_URL = "https://buildlytics-ai.onrender.com";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const TOOLS={powerbi:{name:'Power BI',icon:'📊',tag:'Power BI'},sql:{name:'SQL',icon:'🗄️',tag:'SQL'},python:{name:'Python',icon:'🐍',tag:'Python'},excel:{name:'Excel',icon:'📗',tag:'Excel'},tableau:{name:'Tableau',icon:'✨',tag:'Tableau'},ml:{name:'Machine Learning',icon:'🧠',tag:'ML'}};
 const state={route:'home',dataset:null,selectedTool:'powerbi',project:null,projects:JSON.parse(localStorage.getItem('buildlytics_projects')||'[]'),theme:localStorage.getItem('buildlytics_theme')||'dark'};
