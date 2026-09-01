@@ -334,29 +334,26 @@ def detect_date_columns(
             continue
 
         if (
-            df[col].dtype == "object"
-        ):
+                    if df[col].dtype == "object":
 
             sample = (
                 df[col]
                 .dropna()
                 .astype(str)
-                .head(30)
+                .str.strip()
+                .head(100)
             )
 
             if len(sample) < 3:
                 continue
 
             try:
-
-                parsed = pd.to_datetime(
-                    sample,
-                    errors="coerce",
+                date_like = sample.str.match(
+                    r"^\d{4}[-/]\d{1,2}[-/]\d{1,2}$"
+                    r"|^\d{1,2}[-/]\d{1,2}[-/]\d{4}$"
                 )
 
-                valid_ratio = (
-                    parsed.notna().mean()
-                )
+                valid_ratio = date_like.mean()
 
                 if valid_ratio >= 0.8:
                     detected.append(col)
