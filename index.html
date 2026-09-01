@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Buildlytics AI — turn datasets into professional analytics projects." />
+  <title>Buildlytics AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <section class="landing" id="landing">
+    <div class="landing-nav">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span><span></span></div><div><strong>Buildlytics <em>AI</em></strong><small>Analytics Project Engine</small></div></div>
+      <div class="landing-links"><a href="#how">How it works</a><a href="#build">What you can build</a><a href="#why">Why Buildlytics</a><button class="primary" id="landingStart">Start Building</button></div>
+    </div>
+    <div class="landing-hero">
+      <span class="landing-kicker">DATA → PROJECT → PORTFOLIO</span>
+      <h1>Turn Raw Data Into a <span>Complete Analytics Project</span></h1>
+      <p>Upload CSV/Excel or start without data. Buildlytics guides you through a professional company-style Power BI, SQL, Python, Excel, Tableau or Machine Learning project — then helps you verify, understand and present it.</p>
+      <div class="landing-actions"><button class="primary" id="heroStart">🚀 Start Building</button><button class="ghost" id="tryDemo">▶ Try Demo Dataset</button></div>
+    </div>
+    <div class="landing-section" id="how"><h2>How Buildlytics Works</h2><p class="lead">No prompt engineering required. Follow one clear workflow from raw data to a portfolio-ready case study.</p><div class="grid g4">
+      <div class="card flat step-card"><div class="step-num">1</div><h3>Upload</h3><p class="muted">Add CSV/Excel, or start a realistic project without a dataset.</p></div>
+      <div class="card flat step-card"><div class="step-num">2</div><h3>Discover</h3><p class="muted">Scan data quality, detect the domain and find useful project opportunities.</p></div>
+      <div class="card flat step-card"><div class="step-num">3</div><h3>Build</h3><p class="muted">Choose exactly one tool or project path and work through a company-style assignment.</p></div>
+      <div class="card flat step-card"><div class="step-num">4</div><h3>Verify & Present</h3><p class="muted">Check consistency, understand the work, prepare for interviews and export it.</p></div>
+    </div></div>
+    <div class="landing-section" id="build"><h2>What Can You Build?</h2><p class="lead">Pick only what you need. Buildlytics keeps the project focused.</p><div class="grid g3">
+      <div class="card flat feature-card"><div class="big-icon">📊</div><h3>Power BI</h3><p class="muted">KPIs, Power Query plan, data model, DAX and dashboard blueprint.</p></div>
+      <div class="card flat feature-card"><div class="big-icon">🗄️</div><h3>SQL</h3><p class="muted">Business questions, joins, CTEs, window functions and analysis scripts.</p></div>
+      <div class="card flat feature-card"><div class="big-icon">🐍</div><h3>Python</h3><p class="muted">Cleaning, EDA, visual analysis and reusable project code.</p></div>
+      <div class="card flat feature-card"><div class="big-icon">📗</div><h3>Excel</h3><p class="muted">Clean data, formulas, pivots, KPIs and executive dashboard planning.</p></div>
+      <div class="card flat feature-card"><div class="big-icon">✨</div><h3>Tableau</h3><p class="muted">Calculated fields, worksheets, filters and dashboard story.</p></div>
+      <div class="card flat feature-card"><div class="big-icon">🧠</div><h3>Machine Learning</h3><p class="muted">Preprocessing, model comparison, evaluation and explainability plan.</p></div>
+    </div></div>
+    <div class="landing-section" id="why"><h2>Why Buildlytics?</h2><p class="lead">It is designed around the analytics project workflow, not just a blank chat box.</p><div class="compare"><div class="card flat"><span class="chip">Generic AI</span><h3>Ask → Answer</h3><p class="muted">You decide every prompt, organize the output yourself and keep track of project consistency.</p></div><div class="card flat" style="border-color:#4f55d8"><span class="chip blue">Buildlytics AI</span><h3>Upload → Build → Verify → Understand → Present</h3><p class="muted">One guided workspace keeps the dataset, business problem, analysis, explanation and export connected.</p></div></div></div>
+    <div class="landing-section"><div class="demo-box"><span class="chip green">60-SECOND DEMO</span><h2>See what happens after a dataset is uploaded</h2><div class="demo-results"><div><b>52,430</b><small class="muted"> Rows scanned</small></div><div><b>12</b><small class="muted"> Data issues</small></div><div><b>4</b><small class="muted"> Project paths</small></div><div><b>Power BI</b><small class="muted"> Recommended</small></div></div><button class="primary" id="demoBuild">Build Demo Project →</button></div></div>
+  </section>
+  <div class="mobile-backdrop" id="backdrop"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+      <div><strong>Buildlytics <em>AI</em></strong><small>From Data to Insights, Automatically</small></div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="pro-card">
+      <div class="pro-title">👑 Founder Access</div>
+      <p>All premium tools are available in this owner workspace.</p>
+      <button class="primary full" data-route="plans">View Pro Features</button>
+    </div>
+  </aside>
+
+  <div class="shell">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="search-wrap">⌕ <input id="globalSearch" placeholder="Search projects, datasets, tools..." /></div>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="Theme">☾</button>
+        <button class="icon-btn" id="notifyBtn" title="Notifications">♢</button>
+        <button class="profile" data-route="owner"><span class="avatar">F</span><span><b>Founder</b><small>Owner</small></span><span>⌄</span></button>
+      </div>
+    </header>
+    <main id="view"></main>
+  </div>
+
+  <input id="fileInput" type="file" accept=".csv,.xlsx,.xls" hidden />
+  <div class="toast" id="toast"></div>
+</body>
+</html>
